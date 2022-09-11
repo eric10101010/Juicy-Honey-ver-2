@@ -151,7 +151,7 @@ function getProductItem() {
         .then(res => {
         product = res.data.product;
         //console.log(api);
-        //console.log(product);
+        console.log(product);
         renderProductItemImg();
         renderProductItemText();
     }).catch(err => {
