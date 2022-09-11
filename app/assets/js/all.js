@@ -435,7 +435,7 @@ function renderCartInfor(){
     let str = "";
     cartData.forEach(item =>{
         str += `<div class="order-list border-bottom border-third">
-                    <li class="order-image">
+                    <li class="order-image ps-lg-3 ps-md-0 ps-0">
                         <img src="${item.product.imageUrl}" alt="cart-photo">
                     </li>
                     <li class="order-title">
