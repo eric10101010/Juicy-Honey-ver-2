@@ -397,7 +397,7 @@ deleteAllBtn.addEventListener("click", function (e) {
 function renderCartInfor() {
   var str = "";
   cartData.forEach(function (item) {
-    str += "<div class=\"order-list border-bottom border-third\">\n                    <li class=\"order-image\">\n                        <img src=\"".concat(item.product.imageUrl, "\" alt=\"cart-photo\">\n                    </li>\n                    <li class=\"order-title\">\n                        <h3>").concat(item.product.title, "</h3>\n                    </li>\n                    <li class=\"order-qty\"><h3>").concat(item.qty, "</h3></li>\n                    <li class=\"order-price\"><h3>").concat(item.total, "</h3></li>\n                </div>");
+    str += "<div class=\"order-list border-bottom border-third\">\n                    <li class=\"order-image ps-lg-3 ps-md-0 ps-0\">\n                        <img src=\"".concat(item.product.imageUrl, "\" alt=\"cart-photo\">\n                    </li>\n                    <li class=\"order-title\">\n                        <h3>").concat(item.product.title, "</h3>\n                    </li>\n                    <li class=\"order-qty\"><h3>").concat(item.qty, "</h3></li>\n                    <li class=\"order-price\"><h3>").concat(item.total, "</h3></li>\n                </div>");
   });
   orderInfor.innerHTML = str;
 } //渲染訂單最後價格
