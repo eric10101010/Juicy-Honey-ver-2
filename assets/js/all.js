@@ -150,8 +150,8 @@ function getProductItem() {
   var api = "https://vue3-course-api.hexschool.io/api/bee666/product/".concat(productID);
   axios.get(api).then(function (res) {
     product = res.data.product; //console.log(api);
-    //console.log(product);
 
+    console.log(product);
     renderProductItemImg();
     renderProductItemText();
   })["catch"](function (err) {

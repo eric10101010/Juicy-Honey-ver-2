@@ -10675,10 +10675,16 @@ a {
     font-weight: bold; }
   .shop-product-item img {
     width: 100%;
-    height: 220px;
+    height: 280px;
     -webkit-transform: scale(0.7);
         -ms-transform: scale(0.7);
             transform: scale(0.7); }
+    @media (max-width: 992px) {
+      .shop-product-item img {
+        height: 250px; } }
+    @media (max-width: 767px) {
+      .shop-product-item img {
+        height: 220px; } }
     .shop-product-item img:hover {
       -webkit-transform: scale(0.95);
           -ms-transform: scale(0.95);
