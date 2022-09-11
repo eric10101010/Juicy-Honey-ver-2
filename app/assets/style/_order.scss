@@ -1,0 +1,148 @@
+.order {
+    &-content {
+        margin-top: 60px;
+        @include mobile {
+            margin-top: 40px;
+        }
+    }
+    &-box {
+        @include mobile {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+    }
+    &Wrap {
+        color: red;
+    }
+    &-list {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        &-title {
+            p {
+                @include pad {
+                    font-size: $text-s;
+                }
+                @include mobile {
+                    font-size: $text-base;
+                }
+            }
+        }
+    }
+    &-image {
+        width: 33%;
+        margin: $text-base 0;
+        display: flex;
+        justify-content: flex-start;
+        @include pad {
+            justify-content: center;
+        }
+        img {
+            width: 80px;
+            height: 80px;
+            @include pad {
+                width: 60px;
+                height: 60px;
+            }
+            @include mobile {
+                width: 45px;
+                height: 45px;
+            }
+        }
+    }
+    &-title {
+        width: 30%;
+        margin-right: 0px;
+    }
+    &-qty {
+        width: 20%;
+        margin-left: $text-m;
+    }
+    &-price {
+        width: 20%;
+        margin-left: 0px;
+    }
+    &-totalPrice{
+        padding-right: 6%;
+    }
+    &-backBtn {
+        border: 1px solid $secondary;
+        color: $secondary;
+        padding: 8px 0;
+        text-align: center;
+        border-radius: $text-xs;
+        &:hover {
+            background-color: $secondary;
+            color: $white;
+        }
+    }
+    &Btn {
+        background-color: $primary;
+        color: $white;
+        padding: 8px 0;
+        text-align: center;
+        border-radius: $text-xs;
+        &:hover {
+            opacity: .5;
+            color: $white;
+        }
+    }
+    &Table {
+        @include mobile {
+            font-size: $text-s;
+        }
+    }
+    &Pay {
+        &-content {
+            margin: 60px 0;
+            @include mobile {
+                margin-top: 40px;
+            }
+            p {
+                @include mobile {
+                    font-size: $text-base;
+                }
+            }
+            li {
+                @include mobile {
+                    font-size: $text-xs;
+                }
+            }
+        }
+    }
+    &-paid {
+        border-bottom: 1px solid #ccc;
+        p {
+            font-size: $text-base;
+            @include mobile {
+                font-size: $text-xs;
+            }
+        }
+        @include mobile {
+            font-size: $text-s;
+        }
+        img {
+            @include mobile {
+                width: $text-xm;
+                height: $text-xm;
+            }
+        }
+    }
+}
+
+.payBtn{
+    margin-top: $text-base;
+    display: block;
+    background-color: $primary;
+    border-radius: 10px;
+    padding: 8px $text-l;
+    color: $white;
+    &:hover {
+        opacity: .6;
+        background-color: red;
+        color: $white;
+    }
+}
+.order-totalprice {
+    padding-right: 8.5%;
+}

@@ -1,0 +1,169 @@
+.about {
+    &-banner {
+        background: url(../images/about-banner.jpg) no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+        height: 30vh;
+        &-title {
+            height: 30vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            h2 {
+                font-size: $text-4xl;
+                color: #ffff;
+                opacity: 1;
+                padding: $text-l 80px;
+                background-color: rgba(2, 2, 2, 0.5);
+                @include mobile {
+                    font-size: $text-2l;
+                    padding: 15px 60px;
+                }
+            }
+        }
+    }
+    &-content {
+        margin-bottom: 96px;
+        @include pad {
+            margin-bottom: $text-2xl;
+        }
+    }
+    &-img {
+        img {
+            width: 100%;
+            height: 650px;
+            @include pad {
+                height: 460px;
+            }
+            @include mobile {
+                height: 220px;
+                background-position: center;
+            }
+        }
+    }
+    &-item {
+        &-text {
+            font-size: $text-m;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 16px $text-l;
+            h3 {
+                font-size: $text-2xl;
+                font-weight: bold;
+                border-bottom: 3px solid $primary;
+                margin-bottom: $text-base;
+                @include pad {
+                    font-size: $text-l;
+                }
+            }
+            p {
+                @include pad {
+                    font-size: $text-s;
+                }
+            }
+        }
+    }
+    &-list {
+        margin: 60px 0;
+        @include pad {
+            margin: 40px 0;
+        }
+        @include mobile {
+            margin: 30px 0;
+        }
+        &-content {
+            justify-content: space-between;
+        }
+        &-title {
+            justify-content: center;
+            align-items: center;
+            color: $white;
+            text-align: center;
+            background: url(../images/about-1.jpg) no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 400px;
+            @include mobile {
+                width: 100%;
+                height: 250px;
+            }
+            h3 {
+                font-size: $text-2xl;
+                @include mobile {
+                    font-size: $text-l;
+                }
+            }
+            h4 {
+                font-size: $text-m;
+                @include pad {
+                    font-size: $text-base;
+                }
+                @include mobile {
+                    font-size: $text-xs;
+                }
+            }
+        }
+        &-one {
+            background: url(../images/about-4.jpg) no-repeat;
+        }
+        &-two {
+            background: url(../images/about-5.jpg) no-repeat;
+        }
+        &-item {
+            width: 50%;
+            background-position: 50% 50%;
+            background-size: cover;
+            height: 350px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            @include mobile {
+                width: 100%;
+                height: 250px;
+            }
+        }
+        &-text {
+            display: flex;
+            flex-direction: column;
+            background-color: rgba(255, 255, 255, 0.7);
+            margin: 0 30px;
+            h3 {
+                font-size: $text-2xl;
+                font-weight: bold;
+                text-align: center;
+                @include pad {
+                    font-size: $text-2l;
+                }
+                @include mobile {
+                    font-size: $text-m;
+                }
+            }
+            p {
+                font-size: $text-m;
+                text-align-last: left;
+                @include pad {
+                    font-size: $text-base;
+                }
+                @include mobile {
+                    font-size: $text-s;
+                }
+            }
+            &-item {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    &-text {
+        @include mobile {
+            width: 100%;
+            display: flex;
+            flex-direction: column-reverse;
+        }
+    }
+}
+

@@ -1,0 +1,486 @@
+.container{
+    max-width: 1140px;
+    margin: 0 auto;
+    @include pad {
+    max-width: 100%;
+    padding: 0 39px;
+    }
+    @include mobile {
+    padding: 0 15px;
+    }
+}
+.row{
+    @include mobile{
+        padding: 0 15px;
+    }
+}
+.header {
+    background-color: $primary;
+    @include pad {
+        padding: 0 39px;
+    }
+    @include mobile {
+        padding: 0 15px;
+    }
+    &-box {
+        justify-content: space-between;
+        align-items: center;
+    }
+    &-logo{
+        background: url(../images/logo.png) no-repeat center;
+        background-size: contain;
+        width: 80px;
+        text-indent: 101%;
+        white-space: nowrap;
+        overflow: hidden;
+        padding: 30px 0;
+        @include pad {
+            width: 60px;
+        }
+        @include mobile {
+            width: 40px;
+            padding: $text-m 0;
+        }
+        &:hover{
+            opacity: 0.5;
+            transition: all .3s;
+        }
+    }
+    &-menu{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include mobile {
+            display: none;
+        }
+    }
+    &-item{
+        a{
+            color: $white;
+            font-size: $text-m;
+            line-height: 1.5;
+            padding: 30px $text-l;
+            @include pad {
+                font-size: $text-base;
+                padding: 30px $text-base;
+            }
+        }
+        @include pad {
+            font-size: $text-base;
+        }
+    }
+    &-link {
+        font-size: $text-m;
+        color: $white;
+    }
+    &-link:hover{
+        transform: scale(1.15);
+        transition: .5s;
+    }
+    &-icon {
+        &:hover {
+            opacity: .6;
+            transform: scale(1.2);
+            transition: .5s;
+        }
+    }
+}
+.footer {
+    background-color: $primary;
+    &-link {
+        padding: 0 $text-l;
+        padding-top: 44px;
+        padding-bottom: $text-2xl;
+        color: $white;
+        &:hover {
+            color: $secondary;
+            transition: .5s;
+        }
+        @include pad {
+            padding: $text-xl 40px $text-l 0;
+        }
+    }
+    &-social {
+        &-link {
+            padding-top: 30px;
+            padding-left: $text-xl;
+            img {
+                @include pad {
+                    width: $text-l;
+                    height: $text-l;
+                }
+            }
+            @include pad {
+                padding-top: $text-xl;
+                padding-left: $text-l;
+            }
+            @include mobile {
+                padding-top: $text-l;
+            }
+        }
+    }
+    &-contact {
+        border-bottom: 1px solid $white;
+        padding-bottom: $text-l;
+        @include pad {
+            padding-bottom: $text-m;
+        }
+        @include mobile {
+            border-bottom: 0;
+            padding-top: 25px;
+            padding-bottom: $text-l;
+        }
+        &-link {
+            padding-bottom: $text-base;
+            @include pad {
+                padding-bottom: $text-xs;
+            }
+            @include mobile {
+                padding-bottom: 6px;
+            }
+            a {
+                font-size: $text-2xl;
+                color: $white;
+                @include pad {
+                    font-size: $text-m;
+                }
+                @include mobile {
+                    font-size: $text-m;
+                }
+            }
+            img {
+                width: $text-4xl;
+                height: $text-4xl;
+                @include pad {
+                    width: $text-l;
+                    height: $text-l;
+                }
+                @include mobile {
+                    width: $text-m;
+                    height: $text-m;
+                }
+            }
+
+        }
+    }
+    &-copyright {
+        padding-top: $text-xl;
+        padding-bottom: 40px;
+        @include pad {
+            padding-top: $text-l;
+            padding-bottom: $text-xl;
+        }
+        @include mobile {
+            padding-top: $text-base;
+            padding-bottom: $text-l;
+        }
+        p {
+            color: $white;
+            @include mobile {
+                font-size: $text-s;
+            }
+        }
+    }
+    &-privacy {
+        &-item {
+            a {
+                font-size: $text-s;
+                color: $white;
+                @include mobile {
+                    font-size: $text-s;
+                }
+            }
+        }
+    }
+}
+.line {
+    color: $white;
+    margin: 0;
+}
+.hamburger-menu {
+    background-color: $primary;
+    opacity: 0.97;
+    z-index: 100;
+    width: 100%;
+    height:380px;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    transform: scaleY(0);
+    transition: transform .3s ease-in-out;
+    transform-origin: 50% 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.hamburger-item {
+    margin: 25px 0;
+}
+.hamburger-item a {
+    color: $white;
+}
+.hamburger-item a:hover{
+    color: $secondary;
+    transition: .5s;
+}
+#toggler:checked ~ .hamburger-menu {
+    transform: scaleY(1);
+}
+
+.hamburger  {
+    position: relative;
+    width: $text-2xl;
+    height: 30px;
+    position: relative;
+    transform: rotate(0deg);
+    transition: .5s ease-in-out;
+    cursor: pointer;
+}
+.hamburger span{
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background: $white;
+    border-radius: 10px;
+    opacity: 1;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+}
+.hamburger span:nth-child(1) {
+    top: 0px;
+}
+.hamburger span:nth-child(2),.hamburger span:nth-child(3) {
+    top: $text-xs;
+}
+.hamburger span:nth-child(4) {
+    top: $text-l;
+}
+.hamburger.open span:nth-child(1) {
+    top: $text-xs;
+    width: 0%;
+    left: 50%;
+}
+.hamburger.open span:nth-child(2) {
+    transform: rotate(45deg);
+}
+.hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+.hamburger.open span:nth-child(4) {
+    top: $text-xs;
+    width: 0%;
+    left: 50%;
+}
+
+.footer {
+    background-color: $primary;
+    &-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: $text-base $text-4xl;
+    }
+    &-list {
+        display: flex;
+        flex-direction: column;
+        align-items: space-between;
+    }
+    &-item a {
+        margin: $text-xxs 0;
+        color: $white;
+        font-size: $text-m;
+        &:hover {
+            color: $secondary;
+            transition: .5s;
+        }
+        @include mobile {
+            font-size: $text-s;
+        }
+    }
+    &-login a {
+        color: $white;
+        font-size: $text-m;
+        &:hover {
+            color: $secondary;
+            transition: .5s;
+        }
+        @include mobile {
+            font-size: $text-s;
+        }
+    }
+    &-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &-img {
+            img {
+                width: 100px;
+            }
+        }
+        &-text {
+            p {
+                color: $white;
+                font-size: $text-m;
+                padding-top: $text-m;
+                @include mobile {
+                    display: none;
+                }
+            }
+        }
+    }
+    &-login {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.modal {
+    &-content {
+        box-shadow: 3px 3px 5px#ccc;
+        background-color: $white;
+        border-radius: $text-xs;
+        @include pad {
+            width: 460px;
+        }
+        @include mobile {
+            width: 336px;
+        }
+    }
+    &-signin {
+        column-gap: $text-4xl;
+        margin-bottom: $text-l;
+        a {
+            color: $primary;
+            border: 1px solid $primary;
+            border-radius: $text-xs;
+            padding: 6px $text-l;
+            &:hover {
+                background-color: $primary;
+                color: $white;
+                transition: .5s;
+            }
+        }
+    }
+    &-login {
+        color: $dark;
+        h4 {
+            font-size: $text-l;
+            line-height: 35px;
+            padding-bottom: $text-l;
+            @include mobile {
+                padding-bottom: 0;
+            }
+        }
+        @include pad {
+            width: 460px;
+        }
+        @include mobile {
+            width: 336px;
+        }
+        &-header {
+            background-color: $primary;
+            border-radius: $text-xs $text-xs 0 0;
+            padding: $text-l;
+            @include mobile {
+                padding-bottom: $text-l;
+            }
+            h3 {
+                font-size: $text-l;
+                line-height: 35px;
+                color: $white;
+            }
+        }
+        &-body {
+            width: 100%;
+            padding: $text-l $text-4xl;
+            padding-bottom: 0;
+            color: #000000;
+            @include mobile {
+                width: 288px;
+                padding: 0;
+            }
+            a {
+                color: $white;
+                border: 1px solid $white;
+                background-color: $primary;
+                border-radius: 8px;
+                text-align: center;
+                padding: 8px 0;
+                margin-bottom: $text-2xl;
+                @include pad {
+                    margin-bottom: $text-l;
+                }
+                @include mobile {
+                    margin-top: 0px;
+                    margin-bottom: $text-m;
+                }
+                &:hover {
+                    opacity: .5;
+                }
+            }
+            &-form {
+                label {
+                    padding-bottom: 8px;
+                }
+                input {
+                    border: 3px solid #ccc;
+                    background-color: $white;
+                    padding: 8px $text-base;
+                }
+
+            }
+        }
+        &-footer {
+            column-gap: $text-base;
+            padding-top: $text-2l;
+            width: 100%;
+            padding: 0px $text-4xl;
+            @include mobile {
+                align-items: center;
+                flex-direction: column;
+                padding-top: 0px;
+                width: 100%;
+                padding: 8px $text-l;
+            }
+            &-mb {
+                margin-bottom: $text-4xl;
+                @include mobile {
+                    margin-bottom: $text-l;
+                }
+            }
+            &-button {
+                display: flex;
+                justify-content: center;
+                border: 1px solid $primary;
+                border-radius: $text-xs;
+                cursor: pointer;
+                @include mobile {
+                    width: 640px;
+                }
+                &:hover {
+                    opacity: .5;
+                }
+                img {
+                    width: $text-l;
+                    height: $text-l;
+                    margin-right: 8px;
+                }
+                a {
+                    padding: $text-xs 0;
+                    color: #000000;
+                    @include mobile {
+                        font-size: $text-xs;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.modal-cart {
+    margin-top: -60px;
+    width: 100%;
+    height: 300vh;
+}

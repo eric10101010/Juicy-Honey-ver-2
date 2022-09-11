@@ -1,0 +1,159 @@
+.shop {
+    &-content {
+        margin-top: 80px;
+        @include pad {
+            margin-top: 60px;
+            @include mobile {
+                margin-top: $text-2xl;
+            }
+        }
+    }
+    &-side {
+        &-mobile {
+            @include mobile {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+        &-bar {
+            font-size: 24px;
+            @include pad {
+                font-size: $text-xm;
+            }
+        }
+        &-list {
+            text-align: center;
+            @include mobile {
+                display: flex;
+                flex-direction: column;
+            }
+            h2 a{
+                background-color: $secondary;
+                color: $white;
+                padding: $text-m 0;
+                @include mobile {
+                    font-size: $text-s;
+                    padding: 8px 0;
+                }
+            }
+        }
+        &-item {
+            @include mobile {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            a {
+                display: block;
+                color: $dark;
+                border: 1px solid #ccc;
+                padding: $text-m 0px;
+                @include mobile {
+                    font-size: $text-s;
+                    width: 100%;
+                    padding: 8px 0;
+                }
+                &:hover {
+                    color: $primary;
+                    transition: .6s;
+                }
+            }
+        }
+    }
+    &-product {
+        &-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            @include mobile {
+                justify-content: center;
+            }
+        }
+        &-item {
+            width: 30%;
+            margin: 0 10px;
+            box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px; 
+            border-radius: $text-xs;          
+            a {
+                overflow: hidden;
+            }
+            @include pad {
+                width: 46%;
+            }
+            @include mobile {
+                width: 80%;
+            }
+            h3 {
+                font-size: $text-m;
+                font-weight: bold;
+            }
+            img {
+                width: 100%;
+                height: 220px;
+                transform: scale(0.7);
+                &:hover {
+                    transform: scale(0.95);
+                    transition: .8s ease-in-out;
+                }
+            }
+        }
+        &-text {
+            text-align: center;
+        }
+        &-price {
+            font-size: $text-m;
+            color: red;
+            font-weight: bold;
+        }
+    }
+}
+.add-btn {
+    padding-right: 10px;
+    font-size: $text-base;
+    display: flex;
+    align-items: center;
+    color: $primary;
+    background: linear-gradient(to right, #ffac25 50%, #fff 50%);
+    background-size: 200% 100.5%;
+    background-position: right bottom;
+    border: none;
+    border-left: 5px solid $primary;
+    border-color: none;
+    box-shadow: 3px 3px 2px rgba(0,0,0,0.08);
+    border-radius: 0px $text-xs $text-xs 0px;
+    transition: all .5s ease-out;
+    &:hover {
+        background-position: left ;
+        background-color: $primary;
+        color: #ffffff;
+    }
+    img {
+        width: $text-l;
+        height: $text-l;
+    }
+}
+.pages {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+.page-item {
+    display: flex;
+    justify-content: center;
+    a {
+        width: 40px;
+        height: 40px;
+        color: $dark;
+        &:hover {
+            color: $white;
+        }
+    }
+}
+.page-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
