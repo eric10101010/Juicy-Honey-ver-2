@@ -636,7 +636,6 @@ function renderOrderPrice(){
     str += `<span class="cart-totalprice">NT$ ${item}</span>`;
     orderFinal.innerHTML = str;
 }
-
 //渲染訂單資訊
 function renderOrderCheck() {
     let str = "";
@@ -807,7 +806,6 @@ function renderData(productData) {
 renderData(currentData);
 renderPageBtn(pageInfo);
 }
-
 productSideList.addEventListener("click", (e) => {
     let catelogValue = e.target.getAttribute('value');
     if ( catelogValue == "全部商品") {
@@ -963,7 +961,6 @@ productBackBtn.addEventListener('click', function(e){
     self.location.href=`shop.html`;
     renderPage(1);
 }) 
-
 productButton.addEventListener('click', function(e) {
     e.preventDefault();
     let addCartClass = e.target.getAttribute('class');
@@ -1001,4 +998,7 @@ productButton.addEventListener('click', function(e) {
         console.log(err);
     })
 })
+
+
+
 
