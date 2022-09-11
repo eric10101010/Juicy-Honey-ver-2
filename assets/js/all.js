@@ -15,7 +15,7 @@ var bannerSwiper = new Swiper(".swiper-container", {
       spaceBetween: 10
     },
     "767": {
-      slidesPerView: 2,
+      slidesPerView: 3,
       spaceBetween: 20
     },
     "375": {
@@ -751,6 +751,11 @@ productSideList.addEventListener("click", function (e) {
       renderSelect(clickPage);
     });
   }
+});
+productBackBtn.addEventListener('click', function (e) {
+  e.preventDefault();
+  self.location.href = "shop.html";
+  renderPage(1);
 }); // 渲染分頁按鈕
 
 function renderPageBtn(pageInfo) {
@@ -793,11 +798,6 @@ page.addEventListener('click', function (e) {
   var clickPage = e.target.dataset.page;
   console.log(clickPage);
   renderPage(clickPage);
-});
-productBackBtn.addEventListener('click', function (e) {
-  e.preventDefault();
-  self.location.href = "shop.html";
-  renderPage(1);
 });
 productButton.addEventListener('click', function (e) {
   e.preventDefault();
