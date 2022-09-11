@@ -12,7 +12,7 @@ const bannerSwiper = new Swiper(".swiper-container", {
             spaceBetween: 10,
         },
         "767": {
-            slidesPerView: 2,
+            slidesPerView: 3,
             spaceBetween: 20,
         },
         "375": {
@@ -806,6 +806,7 @@ function renderData(productData) {
 renderData(currentData);
 renderPageBtn(pageInfo);
 }
+
 productSideList.addEventListener("click", (e) => {
     let catelogValue = e.target.getAttribute('value');
     if ( catelogValue == "全部商品") {
@@ -885,7 +886,11 @@ productSideList.addEventListener("click", (e) => {
         }
     }
 });
-
+productBackBtn.addEventListener('click', function(e){
+    e.preventDefault();
+    self.location.href=`shop.html`;
+    renderPage(1);
+}) 
 // 渲染分頁按鈕
 function renderPageBtn(pageInfo){
     let str = "";
@@ -956,11 +961,6 @@ page.addEventListener('click', function(e){
     renderPage(clickPage);
 })
 
-productBackBtn.addEventListener('click', function(e){
-    e.preventDefault();
-    self.location.href=`shop.html`;
-    renderPage(1);
-}) 
 productButton.addEventListener('click', function(e) {
     e.preventDefault();
     let addCartClass = e.target.getAttribute('class');
@@ -998,6 +998,7 @@ productButton.addEventListener('click', function(e) {
         console.log(err);
     })
 })
+
 
 
 
