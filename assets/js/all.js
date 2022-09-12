@@ -102,10 +102,7 @@ var formMessage = document.querySelector('.form-message');
 var cartBtn = document.querySelector('.cart-orderbtn');
 var productImg = document.querySelector('.product-img');
 var productText = document.querySelector('.product-text');
-var productButton = document.querySelector('.product-button');
-var productBackBtn = document.querySelector('.product-backBtn');
 var productSideList = document.querySelector(".shop-side-list");
-var page = document.querySelector('.pages');
 var cartData = [];
 var productData = [];
 var orderData = [];
@@ -751,90 +748,41 @@ productSideList.addEventListener("click", function (e) {
       renderSelect(clickPage);
     });
   }
-});
-productBackBtn.addEventListener('click', function (e) {
-  e.preventDefault();
-  self.location.href = "shop.html";
-  renderPage(1);
-}); // 渲染分頁按鈕
-
-function renderPageBtn(pageInfo) {
-  var str = "";
-  var totalPages = pageInfo.totalPages; //console.log(totalPages);
-
-  if (pageInfo.isFirst) {
-    str += "\n        <li class=\"page-item disabled\">\n            <a class=\"page-link\" href=\"#\">\n                \u25C0\n            </a>\n        </li>\n        ";
-  } else {
-    str += "\n        <li class=\"page-item\">\n            <a class=\"page-link\" href=\"#\" aria-label=\"Previous\" data-page=\"".concat(Number(pageInfo.nowPage) - 1, "\">\n                \u25C0\n            </a>\n        </li>\n        ");
-  } // 第 2 ~
-
-
-  for (var i = 1; i <= totalPages; i++) {
-    if (Number(pageInfo.nowPage) == i) {
-      str += "\n            <li class=\"page-item active\" aria-current=\"page\">\n            <a class=\"page-link\" href=\"#\" data-page=\"".concat(i, "\">").concat(i, "</a>\n            </li>\n        ");
-    } else {
-      str += "\n            <li class=\"page-item\" aria-current=\"page\">\n            <a class=\"page-link\" href=\"#\" data-page=\"".concat(i, "\">").concat(i, "</a>\n            </li>\n        ");
-    }
-  } // 是不是最後一頁
-
-
-  if (pageInfo.isLast) {
-    str += "\n        <li class=\"page-item disabled\">\n            <a class=\"page-link\" href=\"#\">\n                \u25B6\n            </a>\n        </li>\n        ";
-  } else {
-    str += "\n        <li class=\"page-item\">\n            <a class=\"page-link\" href=\"#\" aria-label=\"Next\" data-page=\"".concat(Number(pageInfo.nowPage) + 1, "\">\n                \u25B6   \n            </a>\n        </li>\n        ");
-  }
-
-  page.innerHTML = str;
-}
-
-page.addEventListener('click', function (e) {
-  e.preventDefault;
-  console.log('click', e.target.nodeName);
-
-  if (e.target.nodeName != 'A') {
-    return;
-  }
-
-  var clickPage = e.target.dataset.page;
-  console.log(clickPage);
-  renderPage(clickPage);
-});
-productButton.addEventListener('click', function (e) {
-  e.preventDefault();
-  var addCartClass = e.target.getAttribute('class');
-
-  if (addCartClass !== 'add-Btn') {
-    //console.log('沒點到');
-    return;
-  }
-
-  ; // let productId = e.target.getAttribute('data-id');
-
-  console.log(productID);
-  var numCheck = 1;
-  cartData.forEach(function (item) {
-    if (item.id === productID) {
-      numCheck = item.qty += 1;
-    }
-  });
-  var url = "https://vue3-course-api.hexschool.io/api/bee666/cart";
-  axios.post(url, {
-    data: {
-      "product_id": productID,
-      "qty": numCheck
-    }
-  }).then(function (res) {
-    console.log(res.data);
-    Swal.fire({
-      position: 'center',
-      icon: 'success',
-      title: '成功加入購物車',
-      showConfirmButton: false,
-      timer: 1500
-    });
-    getCartList();
-  })["catch"](function (err) {
-    console.log(err);
-  });
-});
+}); // productButton.addEventListener('click', function(e) {
+//     e.preventDefault();
+//     let addCartClass = e.target.getAttribute('class');
+//     if(addCartClass !== 'add-Btn'){
+//         //console.log('沒點到');
+//         return;
+//     };
+//     // let productId = e.target.getAttribute('data-id');
+//     console.log(productID);
+//     let numCheck = 1;
+//     cartData.forEach(function(item){
+//         if(item.id === productID){
+//         numCheck = item.qty += 1;
+//     }
+//     })
+//     const url = "https://vue3-course-api.hexschool.io/api/bee666/cart";
+//     axios.post(url,{
+//         data: {
+//         "product_id": productID,
+//         "qty": numCheck
+//         }
+//     })
+//     .then(res =>{
+//         console.log(res.data);
+//         Swal.fire({
+//             position: 'center',
+//             icon: 'success',
+//             title: '成功加入購物車',
+//             showConfirmButton: false,
+//             timer: 1500
+//         });
+//         getCartList();
+//     })
+//     .catch(err =>{
+//         console.log(err);
+//     })
+// })
 //# sourceMappingURL=all.js.map
