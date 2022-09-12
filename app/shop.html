@@ -49,8 +49,77 @@ current: shop
   </div>
 </section>
 
+<script>
+const pagnation = document.querySelector('.pages');
+// 渲染分頁按鈕
+function renderPageBtn(pageInfo){
+    let str = "";
+    let totalPages = pageInfo.totalPages;
+    //console.log(totalPages);
+    if(pageInfo.isFirst){
+        str += `
+        <li class="page-item disabled">
+            <a class="page-link" href="#">
+                ◀
+            </a>
+        </li>
+        `;
+    }else{
+        str += `
+        <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous" data-page="${Number(pageInfo.nowPage) - 1}">
+                ◀
+            </a>
+        </li>
+        `;
+    }
+    // 第 2 ~
+    for(let i=1; i<=totalPages; i++){
+        if(Number(pageInfo.nowPage) == i){
+        str += `
+            <li class="page-item active" aria-current="page">
+            <a class="page-link" href="#" data-page="${i}">${i}</a>
+            </li>
+        `;
+        }else{
+        str += `
+            <li class="page-item" aria-current="page">
+            <a class="page-link" href="#" data-page="${i}">${i}</a>
+            </li>
+        `;
+        }
+    }
 
-
-
+    // 是不是最後一頁
+    if(pageInfo.isLast){
+        str += `
+        <li class="page-item disabled">
+            <a class="page-link" href="#">
+                ▶
+            </a>
+        </li>
+        `;
+    }else{
+        str += `
+        <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next" data-page="${Number(pageInfo.nowPage) + 1}">
+                ▶   
+            </a>
+        </li>
+        `;
+    }
+    page.innerHTML = str;
+}
+pagnation.addEventListener('click', function(e){
+    e.preventDefault;
+    console.log('click',e.target.nodeName);
+    if(e.target.nodeName != 'A'){
+    return;
+    }
+    let clickPage = e.target.dataset.page;
+    console.log(clickPage);
+    renderPage(clickPage);
+})
+</script>
 
 

@@ -99,11 +99,10 @@ const formMessage = document.querySelector('.form-message');
 const cartBtn = document.querySelector('.cart-orderbtn');
 const productImg = document.querySelector('.product-img');
 const productText = document.querySelector('.product-text');
-const productButton = document.querySelector('.product-button');
-const productBackBtn = document.querySelector('.product-backBtn');
+
 
 const productSideList = document.querySelector(".shop-side-list");
-const page = document.querySelector('.pages');
+
 
 let cartData = [];
 let productData = [];
@@ -606,6 +605,7 @@ function renderOrders() {
 
     orderTable.innerHTML = str;
 };
+
 //渲染訂單付款狀態
 function renderOrderPaid(){
     let str = "";
@@ -806,7 +806,6 @@ function renderData(productData) {
 renderData(currentData);
 renderPageBtn(pageInfo);
 }
-
 productSideList.addEventListener("click", (e) => {
     let catelogValue = e.target.getAttribute('value');
     if ( catelogValue == "全部商品") {
@@ -886,118 +885,49 @@ productSideList.addEventListener("click", (e) => {
         }
     }
 });
-productBackBtn.addEventListener('click', function(e){
-    e.preventDefault();
-    self.location.href=`shop.html`;
-    renderPage(1);
-}) 
-// 渲染分頁按鈕
-function renderPageBtn(pageInfo){
-    let str = "";
-    let totalPages = pageInfo.totalPages;
-    //console.log(totalPages);
-    if(pageInfo.isFirst){
-        str += `
-        <li class="page-item disabled">
-            <a class="page-link" href="#">
-                ◀
-            </a>
-        </li>
-        `;
-    }else{
-        str += `
-        <li class="page-item">
-            <a class="page-link" href="#" aria-label="Previous" data-page="${Number(pageInfo.nowPage) - 1}">
-                ◀
-            </a>
-        </li>
-        `;
-    }
-    // 第 2 ~
-    for(let i=1; i<=totalPages; i++){
-        if(Number(pageInfo.nowPage) == i){
-        str += `
-            <li class="page-item active" aria-current="page">
-            <a class="page-link" href="#" data-page="${i}">${i}</a>
-            </li>
-        `;
-        }else{
-        str += `
-            <li class="page-item" aria-current="page">
-            <a class="page-link" href="#" data-page="${i}">${i}</a>
-            </li>
-        `;
-        }
-    }
 
-    // 是不是最後一頁
-    if(pageInfo.isLast){
-        str += `
-        <li class="page-item disabled">
-            <a class="page-link" href="#">
-                ▶
-            </a>
-        </li>
-        `;
-    }else{
-        str += `
-        <li class="page-item">
-            <a class="page-link" href="#" aria-label="Next" data-page="${Number(pageInfo.nowPage) + 1}">
-                ▶   
-            </a>
-        </li>
-        `;
-    }
-    page.innerHTML = str;
-}
-page.addEventListener('click', function(e){
-    e.preventDefault;
-    console.log('click',e.target.nodeName);
-    if(e.target.nodeName != 'A'){
-    return;
-    }
-    let clickPage = e.target.dataset.page;
-    console.log(clickPage);
-    renderPage(clickPage);
-})
 
-productButton.addEventListener('click', function(e) {
-    e.preventDefault();
-    let addCartClass = e.target.getAttribute('class');
-    if(addCartClass !== 'add-Btn'){
-        //console.log('沒點到');
-        return;
-    };
-    // let productId = e.target.getAttribute('data-id');
-    console.log(productID);
-    let numCheck = 1;
-    cartData.forEach(function(item){
-        if(item.id === productID){
-        numCheck = item.qty += 1;
-    }
-    })
-    const url = "https://vue3-course-api.hexschool.io/api/bee666/cart";
-    axios.post(url,{
-        data: {
-        "product_id": productID,
-        "qty": numCheck
-        }
-    })
-    .then(res =>{
-        console.log(res.data);
-        Swal.fire({
-            position: 'center',
-            icon: 'success',
-            title: '成功加入購物車',
-            showConfirmButton: false,
-            timer: 1500
-        });
-        getCartList();
-    })
-    .catch(err =>{
-        console.log(err);
-    })
-})
+
+// productButton.addEventListener('click', function(e) {
+//     e.preventDefault();
+//     let addCartClass = e.target.getAttribute('class');
+//     if(addCartClass !== 'add-Btn'){
+//         //console.log('沒點到');
+//         return;
+//     };
+//     // let productId = e.target.getAttribute('data-id');
+//     console.log(productID);
+//     let numCheck = 1;
+//     cartData.forEach(function(item){
+//         if(item.id === productID){
+//         numCheck = item.qty += 1;
+//     }
+//     })
+//     const url = "https://vue3-course-api.hexschool.io/api/bee666/cart";
+//     axios.post(url,{
+//         data: {
+//         "product_id": productID,
+//         "qty": numCheck
+//         }
+//     })
+//     .then(res =>{
+//         console.log(res.data);
+//         Swal.fire({
+//             position: 'center',
+//             icon: 'success',
+//             title: '成功加入購物車',
+//             showConfirmButton: false,
+//             timer: 1500
+//         });
+//         getCartList();
+//     })
+//     .catch(err =>{
+//         console.log(err);
+//     })
+// })
+
+
+
 
 
 
