@@ -192,6 +192,20 @@
             }
         }
     }
+    &-login {
+        h3 {
+            text-align: center;
+            font-size: 18px;
+            line-height: 20px;
+            color: $white;
+            @include pad {
+                font-size: 20px;
+            }
+            @include mobile {
+                font-size: 14px;
+            }
+        }
+    }
 }
 .line {
     color: $white;
@@ -317,6 +331,9 @@
         &-img {
             img {
                 width: 100px;
+                @include mobile {
+                    width: 70px;
+                }
             }
         }
         &-text {
@@ -338,6 +355,8 @@
 
 .modal {
     &-content {
+        position: relative;
+        top: -42px;
         box-shadow: 3px 3px 5px#ccc;
         background-color: $white;
         border-radius: $text-xs;
@@ -345,7 +364,8 @@
             width: 460px;
         }
         @include mobile {
-            width: 336px;
+            width: 376px;
+            border-radius: 0px;
         }
     }
     &-signin {
@@ -377,7 +397,7 @@
             width: 460px;
         }
         @include mobile {
-            width: 336px;
+            width: 376px;
         }
         &-header {
             background-color: $primary;
