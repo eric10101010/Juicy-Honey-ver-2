@@ -9734,6 +9734,17 @@ table {
     @media (max-width: 767px) {
       .footer-privacy-item a {
         font-size: 14px; } }
+  .footer-login h3, .footer-login .h3 {
+    text-align: center;
+    font-size: 18px;
+    line-height: 20px;
+    color: #ffffff; }
+    @media (max-width: 992px) {
+      .footer-login h3, .footer-login .h3 {
+        font-size: 20px; } }
+    @media (max-width: 767px) {
+      .footer-login h3, .footer-login .h3 {
+        font-size: 14px; } }
 
 .line {
   color: #ffffff;
@@ -9907,6 +9918,9 @@ table {
             align-items: center; }
     .footer-right-img img {
       width: 100px; }
+      @media (max-width: 767px) {
+        .footer-right-img img {
+          width: 70px; } }
     .footer-right-text p {
       color: #ffffff;
       font-size: 20px;
@@ -9923,6 +9937,8 @@ table {
             justify-content: center; }
 
 .modal-content {
+  position: relative;
+  top: -42px;
   -webkit-box-shadow: 3px 3px 5px #ccc;
           box-shadow: 3px 3px 5px #ccc;
   background-color: #ffffff;
@@ -9932,7 +9948,8 @@ table {
       width: 460px; } }
   @media (max-width: 767px) {
     .modal-content {
-      width: 336px; } }
+      width: 376px;
+      border-radius: 0px; } }
 
 .modal-signin {
   -webkit-column-gap: 48px;
@@ -9965,7 +9982,7 @@ table {
       width: 460px; } }
   @media (max-width: 767px) {
     .modal-login {
-      width: 336px; } }
+      width: 376px; } }
   .modal-login-header {
     background-color: #ffac25;
     border-radius: 12px 12px 0 0;
@@ -10357,7 +10374,7 @@ a {
       height: 15%; } }
   @media (max-width: 767px) {
     .arrow {
-      height: 15%; }
+      height: 20%; }
       .arrow i {
         font-size: 48px; } }
 
