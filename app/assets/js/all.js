@@ -887,7 +887,7 @@ productSideList.addEventListener("click", (e) => {
                                 <h3>${item.title}</h3>
                             </div>
                             <div class="shop-product-price d-flex justify-content-around px-3 pt-1 pb-3">
-                                <h3>${item.price}</h3>
+                                <h3>NT$${item.price}</h3>
                                 <a href="#" class="add-btn" id="addCardBtn" data-id="${item.id}">
                                     <img src="./assets/images/cart.png" alt="cart">加入購物車
                                 </a>
