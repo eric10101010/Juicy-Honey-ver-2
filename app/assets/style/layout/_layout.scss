@@ -354,12 +354,15 @@
 }
 
 .modal {
+    &-main {
+        border-radius: 12px;
+    }
     &-content {
         position: relative;
         top: -42px;
         box-shadow: 3px 3px 5px#ccc;
         background-color: $white;
-        border-radius: $text-xs;
+        border-radius: 12px;
         @include pad {
             width: 460px;
         }
