@@ -113,3 +113,5 @@ exports.clean = clean;
 exports.build = gulp.series(clean, copyFile, layoutHTML, sass, babel, vendorsJs);
 
 exports.default = gulp.series(clean, copyFile, layoutHTML, sass, babel, vendorsJs, gulp.parallel(browser, watch));
+
+

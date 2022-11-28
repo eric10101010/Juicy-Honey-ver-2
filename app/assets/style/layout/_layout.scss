@@ -15,7 +15,7 @@
     }
 }
 .header {
-    background-color: $primary;
+    background-color: #3e6bb8;
     @include pad {
         padding: 0 39px;
     }
@@ -29,16 +29,16 @@
     &-logo{
         background: url(../images/logo.png) no-repeat center;
         background-size: contain;
-        width: 80px;
+        width: 120px;
         text-indent: 101%;
         white-space: nowrap;
         overflow: hidden;
         padding: 30px 0;
         @include pad {
-            width: 60px;
+            width: 100px;
         }
         @include mobile {
-            width: 40px;
+            width: 70px;
             padding: $text-m 0;
         }
         &:hover{
@@ -86,137 +86,61 @@
     }
 }
 .footer {
-    background-color: $primary;
-    &-link {
-        padding: 0 $text-l;
-        padding-top: 44px;
-        padding-bottom: $text-2xl;
-        color: $white;
-        &:hover {
-            color: $secondary;
-            transition: .5s;
-        }
-        @include pad {
-            padding: $text-xl 40px $text-l 0;
-        }
-    }
-    &-social {
-        &-link {
-            padding-top: 30px;
-            padding-left: $text-xl;
-            img {
-                @include pad {
-                    width: $text-l;
-                    height: $text-l;
-                }
-            }
-            @include pad {
-                padding-top: $text-xl;
-                padding-left: $text-l;
-            }
-            @include mobile {
-                padding-top: $text-l;
-            }
-        }
-    }
-    &-contact {
-        border-bottom: 1px solid $white;
-        padding-bottom: $text-l;
-        @include pad {
-            padding-bottom: $text-m;
-        }
-        @include mobile {
-            border-bottom: 0;
-            padding-top: 25px;
-            padding-bottom: $text-l;
-        }
-        &-link {
-            padding-bottom: $text-base;
-            @include pad {
-                padding-bottom: $text-xs;
-            }
-            @include mobile {
-                padding-bottom: 6px;
-            }
-            a {
-                font-size: $text-2xl;
-                color: $white;
-                @include pad {
-                    font-size: $text-m;
-                }
-                @include mobile {
-                    font-size: $text-m;
-                }
-            }
-            img {
-                width: $text-4xl;
-                height: $text-4xl;
-                @include pad {
-                    width: $text-l;
-                    height: $text-l;
-                }
-                @include mobile {
-                    width: $text-m;
-                    height: $text-m;
-                }
-            }
-
-        }
-    }
-    &-copyright {
-        padding-top: $text-xl;
-        padding-bottom: 40px;
-        @include pad {
-            padding-top: $text-l;
-            padding-bottom: $text-xl;
-        }
-        @include mobile {
-            padding-top: $text-base;
-            padding-bottom: $text-l;
+    &-item {
+        img {
+            width: 200px;
+            padding: 24px 0;
         }
         p {
-            color: $white;
-            @include mobile {
-                font-size: $text-s;
-            }
+            color: #FFFFFF;
+            font-size: 18px;
         }
     }
-    &-privacy {
+    &-logo {
+        display: flex;
+        justify-content: center;
+        img {
+            width: 150px;
+        }
+    }
+    &-page {
+        &-list {
+            display: flex;
+            justify-content: space-around;
+        }
         &-item {
             a {
-                font-size: $text-s;
-                color: $white;
-                @include mobile {
-                    font-size: $text-s;
+                color: #FFFFFF;
+                font-size: 24px;
+                @include pad {
+                    font-size: 20px;
+                }
+                &:hover {
+                    color: #FFFFFF;
+                    transition: .6s;
+                    transform: scale(1.1);
+                }
+            }
+        }
+        &-copyright {
+            h3 {
+                font-size: 24px;
+                color: #FFFFFF;
+                @include pad {
+                    font-size: 14px;
+                    text-align: center;
                 }
             }
         }
     }
-    &-login {
-        h3 {
-            text-align: center;
-            font-size: 18px;
-            line-height: 20px;
-            color: $white;
-            @include pad {
-                font-size: 20px;
-            }
-            @include mobile {
-                font-size: 14px;
-            }
-        }
-    }
-}
-.line {
-    color: $white;
-    margin: 0;
+
 }
 .hamburger-menu {
-    background-color: $primary;
+    background-color: #3e6bb8;
     opacity: 0.97;
     z-index: 100;
     width: 100%;
-    height:380px;
+    height:320px;
     position: absolute;
     top: 60px;
     right: 0;
@@ -253,7 +177,7 @@
 .hamburger span{
     display: block;
     position: absolute;
-    height: 4px;
+    height: 3px;
     width: 100%;
     background: $white;
     border-radius: 10px;
@@ -262,10 +186,10 @@
     transition: .25s ease-in-out;
 }
 .hamburger span:nth-child(1) {
-    top: 0px;
+    top: 3px;
 }
 .hamburger span:nth-child(2),.hamburger span:nth-child(3) {
-    top: $text-xs;
+    top: 14px;
 }
 .hamburger span:nth-child(4) {
     top: $text-l;
@@ -288,7 +212,7 @@
 }
 
 .footer {
-    background-color: $primary;
+    background-color: #3e6bb8;
     &-box {
         display: flex;
         justify-content: space-between;
@@ -506,4 +430,35 @@
     margin-top: -60px;
     width: 100%;
     height: 300vh;
+}
+
+
+.loading-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:repeating-linear-gradient(135deg, 
+    #3e6bb8 5%, #3e6bb8 5%, 
+    #26497a 35%, #26497a 30%);
+    /* background: repeating-linear-gradient(45deg,#3e6bb8, #00A8D2); */
+    z-index: 100;
+}
+.loading {
+    position: absolute;
+    top: 45%;
+    left: 43%;
+    width: 240px;
+    height: 240px;
+    @include pad {
+        top: 35%;
+        left: 31.5%;
+    }
+    @include mobile {
+        width: 160px;
+        height: 160px;
+        top: 30%;
+        left: 25%;
+    }
 }

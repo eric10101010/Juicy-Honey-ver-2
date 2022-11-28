@@ -1,238 +1,413 @@
-.index {
+.index{
     &-banner {
-        background: url(../images/banner.jpg) no-repeat;
+        max-width: 100%;
+        background-image: url(../images/banner.jpg);
+        background-position:center center;
+        height: 98vh;
         background-size: cover;
-        background-position: center center;
-        height: 90vh;
         @include pad {
             height: 45vh;
+            background-position: 0%;
         }
         @include mobile {
-            height: 40vh;
+            height: 38vh;
         }
-        &-title {
-            height: 90vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: #ffffff;
+        &-box {
+            height: 98vh;
             @include pad {
                 height: 45vh;
             }
             @include mobile {
-                height: 40vh;
+                height: 38vh;
+            }
+        }
+        &-text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 600px;
+            height: 170px;
+            background-color: rgba(2, 2, 2, 0.5);
+            @include mobile {
+                height: 120px;
             }
             h2 {
-                font-size: 80px;
-                line-height: 94px;
-                @include mobile {
-                    font-size: $text-xl;
-                    line-height: 45px;
+                color: #FFFFFF;
+                font-size: 36px;
+                @include pad {
+                    font-size: 30px;
+                }
+                @include pad {
+                    font-size: 20px;
                 }
             }
-            p {
-                font-size: $text-2l;
-                line-height: $text-3xl;
-                @include mobile {
-                    font-size: $text-base;
+            a {
+                margin-top: 16px;
+                display: inline-block;
+                background-color: rgb(79, 103, 172);
+                color: #FFFFFF;
+                padding: 8px 32px;
+                @include pad {
+                    font-size: 14px;
                 }
+                @include mobile {
+                    font-size: 12px;
+                    padding: 6px 24px;
+                }
+            }
+            a:hover {
+                background-color: rgb(90, 223, 159);
+                transition: .6s;
             }
         }
     }
     &-about {
-        margin: 80px 0;
+        margin-top: 64px;
+        margin-bottom: 80px;
         @include pad {
-            margin: $text-4xl 0;
+            margin-top: 54px;
+            margin-bottom: 48px;
+        }
+        @include mobile {
+            margin-top: 40px;
+            margin-bottom: 48px;
+        }
+        &-list {
+            @include mobile {
+                display: flex;
+                flex-direction: column-reverse;
+            }
+        }
+        &-img {
+            img {
+                width: 100%;
+                height: auto;
+            }
+            @include mobile {
+                margin-bottom: 36px;
+            }
+        }
+        &-text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            h3 {
+                font-size: 36px;
+                @include mobile {
+                    font-size: 28px;
+                }
+            }
+            p {
+                text-align: center;
+                line-height: 30px;
+                @include mobile {
+                    font-size: 14px;
+                    line-height: 28px;
+                }
+            }
+        }
+    }
+    &-serve {
+        background-image: url(../images/serve-banner.jpg);
+        background-size: cover;
+        height: 1000px;
+        background-position: 10%;
+        @include pad {
+            height: 900px;
+        }
+        @include mobile {
+            height: 1130px;
+        }
+        h2 {
+            padding-top: 100px;
+            text-align: center;
+            font-size: 48px;
+            @include pad {
+                font-size: 40px;
+                padding-top: 64px;
+            }
+            @include mobile {
+                padding: 36px 0;
+                font-size: 28px;
+            }
+        }
+        &-list {
+            justify-content: space-between;
+            @include mobile {
+                justify-content: center;
+            }
+        }
+        &-img {
+            width: 55%;
+            display: flex;
+            justify-content: center;
+            @include pad {
+                width: 70%;
+            }
+            @include mobile {
+                display: none;
+            }
+        }
+        &-ucrm {
+            position: relative;
+            right: -80px;
+            bottom: -80px;
+            background-color: #FFFFFF;
+            border: 2px solid #ccc;
+            text-align: center;
+            padding-top: 120px;
+            padding: 24px 16px;
+            h3 {
+                font-size: 28px;
+            }
+            @include pad {
+                right: 0;
+                bottom: -40px;
+            }
+            @include mobile {
+                bottom: 0;
+                margin-bottom: 30px;
+            }
+        }
+        &-ufhir {
+            position: relative;
+            right: 80px;
+            bottom: -80px;
+            background-color: #FFFFFF;
+            border: 2px solid #ccc;
+            text-align: center;
+            padding-top: 120px;
+            padding: 24px 16px;
+            h3 {
+                font-size: 28px;
+            }
+            @include pad {
+                right: 0;
+                bottom: -40px;
+            }
+            @include mobile {
+                bottom: 0;
+                margin-bottom: 30px;
+            }
+        }
+        &-ubase {
+            position: relative;
+            right: 80px;
+            bottom: 80px;
+            background-color: #FFFFFF;
+            border: 2px solid #ccc;
+            text-align: center;
+            padding-top: 120px;
+            padding: 24px 16px;
+            h3 {
+                font-size: 28px;
+            }
+            @include pad {
+                right: 0;
+                bottom: 40px;
+            }
+            @include mobile {
+                bottom: 0;
+            }
+        }
+        &-upose {
+            position: relative;
+            right: -80px;
+            bottom: 80px;
+            background-color: #FFFFFF;
+            border: 2px solid #ccc;
+            text-align: center;
+            padding: 24px 16px;
+            h3 {
+                font-size: 28px;
+            }
+            @include pad {
+                right: 0;
+                bottom: 40px;
+            }
+            @include mobile {
+                bottom: 0;
+                margin-bottom: 30px;
+            }
+        }
+    }
+    &-slogan {
+        max-width: 100%;
+        height: 30vh;
+        background-image: url(../images/slogan-banner.jpg);
+        background-size: cover;
+        background-attachment: fixed;
+        @include pad {
+            height: 25vh;
+        }
+        @include mobile {
+            height: 20vh;
+        }
+        &-box {
+            justify-content: center;
+            align-items: center;
+            height: 30vh;
+            @include pad {
+                height: 25vh;
+            }
+            @include mobile {
+                height: 20vh;
+            }
+        }
+
+        &-text {
+            color: #FFFFFF;
+            width: 600px;
+            background-color: rgba(126, 170, 220, 0.5);
+            font-size: 36px;
+            text-align: center;
+            padding: 20px 0;
+            @include mobile {
+                font-size: 24px;
+                padding: 16px 0;
+            }
+        }
+    }
+    &-system {
+        border-top: 1px solid transparent;
+        max-width: 100%;
+        background-image: url(../images/system-banner-1.png);
+        background-size: cover;
+        height: auto;
+        padding-bottom: 80px;
+        @include pad {
+            padding-bottom: 36px;
+        }
+        @include mobile {
+            background-size: contain;
+        }
+        &-list {
+            @include mobile {
+                flex-direction: column-reverse;
+                align-items: center;
+            }
         }
         &-img {
             display: flex;
+            justify-content: center;
             align-items: center;
             img {
                 width: 100%;
-                height: 300px;
+                height: auto;
+                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            }
+        }
+        &-text {
+            max-height: 100%;
+            background-color: #FFFFFF;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            @include pad {
+                height: auto;
+            }
+            @include mobile {
+                padding: 70px 0;
+                margin-top: 36px;
+            }
+            h3 {
+                font-size: 48px;
+            }
+        }
+    }
+    &-contact {
+        padding-top: 64px;
+        margin-bottom: 120px;
+        @include pad {
+            margin-bottom: 36px;
+        }
+        @include mobile {
+            padding-top: 36px;
+            margin-bottom: 0;
+        }
+        h2 {
+            text-align: center;
+            font-size: 48px;
+            padding-bottom: 64px;
+            @include pad {
+                font-size: 40px;
+                padding-bottom: 48px;
+            }
+            @include mobile {
+                font-size: 28px;
+                padding-bottom: 24px;
+            }
+        }
+        &-title {
+            display: flex;
+            justify-content: center;
+            h3 {
+                font-size: $text-4xl;
+                margin-top: $text-4xl;
+                margin-bottom: 0px;
+                padding-bottom: $text-xxs;
+                width: 200px;
+                border-bottom: 3px solid $primary;
                 @include pad {
-                    height: 200px;
+                    font-size: $text-2xl;
+                    width: 150px;
+                    margin-top: $text-2xl;
+                }
+                @include mobile {
+                    margin-top: $text-l;
+                    font-size: $text-xl;
+                    width: 130px;
+                }
+            }
+        }
+        &-list {
+            &-title {
+                background-color: #00A8D2;
+                color: $white;
+                font-size: 32px;
+                box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+                @include mobile {
+                    font-size: $text-l;
+                } 
+            }
+            &-item {
+                font-size: $text-m;
+                a {
+                    color: #000000;
+                }
+                @include mobile {
+                    h4 {
+                        font-size: $text-base;
+                    }
+                    p{
+                        font-size: 12px;
+                    }
+                } 
+            }
+        }
+        &-map {
+            iframe {
+                width: 100%;
+                height: 500px;
+                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                @include mobile {
+                    height: 350px;
                 }
             }
         }
         &-text {
-            flex-direction: column;
-            h3 {
-                font-size: $text-l;
-                font-weight: bold;
-                border-bottom: 3px solid $primary;
-                @include pad {
-                    font-size: $text-m;
-                }
-            }
-            p {
-                @include pad {
-                    font-size: $text-xs;
-                }
-            }
-        }
-    }
-    &-function {
-        &-box {
-            display: flex;
-            justify-content: space-between;
-        }
-        &-img {
-            background: url(../images/catelog-1.jpg) no-repeat;
-            width: 31.5%;
-            background-position: 100% 0%;
-            background-size: cover;
-            height: 350px;
-            border-radius: 50%;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            width: 500px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
             @include pad {
-                height: 220px;
-                background-position: 100% 50%;
+                margin-top: 48px;
+                width: 100%;
+                text-align: center;
             }
             @include mobile {
-                width: 100%;
-                height: 320px;
+                margin-top: 40px;
             }
-            p {
-                width: 80%;
-                position: absolute;
-                top: 70%;
-                left: 10%;
-                background-color: #ffffff;
-                padding: $text-m;
-                border-bottom: 5px solid orange;
-                box-shadow: 5px 1px #ccc;
-                @include pad {
-                    top: 65%;
-                    font-size: $text-s;
-                    padding: $text-xs $text-base;
-                }
-                @include mobile {
-                    top: 38%;;
-                }
-            }
-        }
-        &-one {
-            background: url(../images/catelog-2.jpg) no-repeat;
-            background-position: 100% 0%;
-            background-size: cover;
-            @include pad {
-                height: 220px;
-                background-position: 100% 50%;
-            }
-            @include mobile {
-                width: 100%;
-                height: 320px;
-            }
-        }
-        &-two {
-            background: url(../images/catelog-3.jpg) no-repeat;
-            background-position: 100% 0%;
-            background-size: cover;
-            @include pad {
-                height: 220px;
-                background-position: 100% 50%;
-            }
-            @include mobile {
-                width: 100%;
-                height: 320px;
-            }
-        }
-    }
-    &-sub {
-        background: url(../images/banner-box.jpg) no-repeat;
-        background-position: 100% 100%;
-        background-size: cover;
-        height: 45vh;
-        margin-top: 100px;
-        margin-bottom: 80px;
-        @include pad {
-            height: 35vh;
-            margin-top: 60px;
-        }
-        @include mobile {
-            margin: 40px 0;
-        }
-        &-title {
-            flex-direction: column;
-            height: 45vh;
-            @include pad {
-                height: 35vh;
-            }
-            h2 {
-                font-size: $text-4xl;
-                color: #ffffff;
-                @include mobile {
-                    font-size: $text-2l;
-                    padding-bottom: 8px;
-                }
-            }
-            p {
-                font-size: $text-l;
-                color: #ffffff;
-                @include mobile {
-                    font-size: $text-base;
-                }
-            }
-        }
-    }
-    &-product {
-        &-title {
-            display: flex;
-            justify-content: center;
-            h3 {
-                font-size: $text-3xl;
-                margin-bottom: $text-4xl;
-                border-bottom: 3px solid $primary;
-                width: 170px;
-                @include pad {
-                    font-size: 40px;
-                    width: 160px;
-                }
-                @include mobile {
-                    font-size: $text-2l;
-                    width: 115px;
-                }
-            }
-        }
-        margin-bottom: 96px;
-        @include mobile {
-            margin-bottom: $text-4xl;
         }
     }
 }
-.arrow {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    margin-left: -20px;
-    color: #ffffff;
-    height: 10%;
-    @include pad {
-        height: 15%;
-    }
-    @include mobile {
-        i {
-            font-size: $text-4xl;
-        }
-        height: 20%;
-    }
-}
-.bounce {
-    animation: bounce 2s infinite;
-}
-    @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-30px);
-    }
-    60% {
-        transform: translateY(-15px);
-    }
-}
+
+
